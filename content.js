@@ -9,19 +9,19 @@ function removeElementWithRetry() {
     if (elementToRemove) {
       elementToRemove.remove();
     } else {
-      console.log(`Element with class ${targetClass} not found`);
-
       if (retryCount < maxRetries) {
         retryCount++;
-        console.log("Retrying...");
-        setTimeout(removeElement, 2000); // 2 seconds
       } else {
-        console.log("Max retries reached. Element not found.");
+        clearInterval(intervalId);
       }
     }
   }
 
-  removeElement();
+  if (window.location.href.includes('jira/software/projects/')) {
+    removeElement();
+
+    setInterval(removeElement, 2000); // Execute every 2 seconds
+  }
 }
 
 removeElementWithRetry();
