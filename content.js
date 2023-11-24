@@ -7,3 +7,4 @@ function removeElement() {
 if (window.location.href.includes('jira/software/projects/')) {
   setInterval(removeElement, 2000); // Execute every 2 seconds
 }
+

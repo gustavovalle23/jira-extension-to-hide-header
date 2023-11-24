@@ -3,9 +3,7 @@
   "name": "Remove Div Extension",
   "version": "1.0",
   "description": "A Chrome extension to remove a div with the class _1yt4zdiv",
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
   "action": {
     "default_icon": {
       "16": "icon.png",
